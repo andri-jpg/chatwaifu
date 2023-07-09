@@ -1,0 +1,13 @@
+{
+  "user_name": "andri",
+  "bot_name": "herta",
+  "vits_model": "herta",
+  "threads": "4",
+  "context_length": "800",
+  "prefer_mmap": "false",
+  "top_p": "0.88",
+  "top_k": "1",
+  "temperature": "0.4",
+  "max_new_tokens": "100",
+  "repetition_penalty": "1.08"
+}

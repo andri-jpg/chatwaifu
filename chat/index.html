@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="splashScreen">
+    <pre id="term" class="term">root@PyWaifu:~$</pre>
+  </div>
+  <div id="container">
+    <aside>
+      <div id="panel" class="panel">
+        <div class="panel-content">
+          <h2>Configuration</h2>
+          <style>
+            #jsonTextarea {
+              width: 100%;
+              height: 300px;
+              margin-top: 40%;
+              resize: vertical;
+            }
+          </style>
+          <textarea id="jsonTextarea"></textarea>
+          <button onclick="saveJSON()">Save</button>
+          <button class="back-button">Back</button>
+        </div>
+      </div>
+      <header>
+        <h2>
+          Chat Waifu
+        </h2>
+      </header>
+      <ul>
+        <li>
+          <img src="waifu\sad.png" width="50" height="50" alt="">
+          <div>
+            <h2>kagami</h2>
+            <h3>
+              <span class="status green"></span>
+              online
+            </h3>
+            <button id="configbutton">Config</button>
+          </div>
+        </li>
+      </ul>
+    </aside>
+    <main>
+      <header>
+        <img src="waifu\anger1.png" width="50" height="50" alt="">
+        <div>
+          <h2>Kagami</h2>
+          <h3>males ngomong gw</h3>
+        </div>
+      </header>
+      <ul id="chat">
+        <!--Container chat-->
+      </ul>
+      <footer>
+        <textarea id="messageInput" placeholder="Type message"></textarea>
+        <button id="sendButton">send</button>
+      </footer>
+      <script type='text/javascript' src='/eel.js'></script>
+      <script type="text/javascript" src="script.js"></script>
+    </main>
+  </div>
+</body>
+
+</html>
