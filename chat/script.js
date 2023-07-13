@@ -24,9 +24,6 @@ function showMainMenu() {
   container.style.display = 'block';
 }
 
-var splashScreen = document.getElementById('splashScreen');
-splashScreen.addEventListener('click', showMainMenu);
-
 var messageInput = document.getElementById('messageInput');
 var sendButton = document.getElementById('sendButton');
 var chatContainer = document.getElementById('chat');
@@ -229,6 +226,9 @@ function saveJSON() {
     var updatedConfig = {};
     keyValueStrings.forEach((keyValueString) => {
       var [key, value] = keyValueString.split(':').map((item) => item.trim());
+      if (!isNaN(value)) {
+        value = parseFloat(value);
+      }
       updatedConfig[key] = value;
     });
     eel.save_config_file(updatedConfig)(function (response) {
@@ -245,10 +245,15 @@ function saveJSON() {
   }
 }
 
-window.addEventListener('DOMContentLoaded', function () {
-  typeWriterEffect('run pywaifu.sh\nload translation\ntranslation loaded');
+
+window.addEventListener('DOMContentLoaded', async function () {
+  await typeWriterEffect('run pywaifu.sh\nload translation\ntranslation loaded\nload tts\ntts loaded\nReady');
+  await new Promise(resolve => setTimeout(resolve, 500));
+  eel.initialize_model();
   loadConfig();
 });
+
+
 
 const toggleButton = document.getElementById('configbutton');
 const panel = document.getElementById('panel');
@@ -262,17 +267,35 @@ backButton.addEventListener('click', function () {
   panel.classList.remove('active');
 });
 
-var imageSrc = 'waifu/anger2.png';
-eel.expose(botResponse);
+eel.expose(statusBot)
+function statusBot(activity){
+  var statusbot=document.getElementById('botStatus');
+  statusbot.innerText = activity;
+}
 
+eel.expose(disableText);
+function disableText(args){
+  if (args == 'enable'){
+  messageInput.disabled=false;
+  }
+  else
+  {
+  messageInput.disabled=true;
+  }
+  
+}
+
+eel.expose(botResponse);
+eel.expose(Audio);
+eel.expose(emotion);
+function emotion(image){
+  botImage(image);
+}
+function Audio() {
+  botAudio();
+}
 function botResponse(output) {
   addMessageBot(output);
-  setTimeout(function () {
-    botImage(imageSrc);
-    setTimeout(function () {
-      botAudio();
-    }, 1000);
-  }, 500);
 }
 
 sendButton.addEventListener('click', sendMessage);

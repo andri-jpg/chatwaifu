@@ -9,9 +9,6 @@ llm-rs[langchain]
 protobuf==3.20.3
 pyopenjtalk==0.3.0
 pysentimiento
-PySimpleGUI
-PySimpleGUIQt
-QtPy
 sentence-transformers==2.2.2
 sentencepiece
 spacy==3.5.3
@@ -27,6 +24,5 @@ tensorboard
 unidecode
 tqdm
 pyaudio
-pygame
-pygame_gui
 monotonic-align
+eel

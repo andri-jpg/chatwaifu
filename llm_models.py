@@ -14,6 +14,8 @@ class ChainingModel:
         self.model_download = ModelDownloader()
         with open('config.json') as self.configuration:
             self.user_config = json.load(self.configuration)
+        with open('template.json') as self.prompt_template:
+            self.user_template = json.load(self.prompt_template)
         meta = f"{model}.meta"
         model = f"{model}.bin"
         self.model = model
@@ -32,7 +34,7 @@ class ChainingModel:
         session_config = SessionConfig(
             threads=self.user_config['threads'],
             context_length=self.user_config['context_length'],
-            prefer_mmap=self.user_config['prefer_mmap']
+            prefer_mmap=False
         )
 
         generation_config = GenerationConfig(
@@ -41,11 +43,10 @@ class ChainingModel:
             temperature=self.user_config['temperature'],
             max_new_tokens=self.user_config['max_new_tokens'],
             repetition_penalty=self.user_config['repetition_penalty'],
-            repetition_penalty_last_n=self.user_config['repetition_penalty_last_n'],
             stop_words=self.stop_words
         )
 
-        template = self.user_config['template']
+        template = self.user_template['template']
 
         self.template = self.change_names(template, self.assistant_name, self.name)
         self.prompt = PromptTemplate(
