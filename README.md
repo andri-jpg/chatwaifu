@@ -12,6 +12,17 @@
 
 ChatWaifu is a user-friendly chat interface that allows users to interact with an anime waifu character. It provides a simple and intuitive user interface for engaging conversations with your virtual companion. Built with Python, ChatWaifu enables seamless communication with an anime waifu, providing a delightful chat experience. This project is an implementation of the [PyWaifu pipeline](https://www.github.com/andri-jpg/PyWaifu).
 
+ChatWaifu runs offline on your PC and use approximately less than 4GB of RAM, which means it can run on systems with at least 6GB of RAM
+
+![ram](https://github.com/andri-jpg/chatwaifu/assets/91838310/22a23c24-fb4e-481f-ae9d-c29df3cd9dee)
+
+## The anime character illustrations used in this project are provided by @Zr6Ov through Picrew. <br> Twitter: [@Zr6Ov](https://twitter.com/Zr6Ov) <br> Picrew Profile Link: [✦絢瀬](https://picrew.me/en/search/creator?crid=1560771)
+
+*Sound on 🔊
+
+
+https://github.com/andri-jpg/chatwaifu/assets/91838310/54847989-db7b-4f9f-bbb7-66fefe0c7ef8
+
 
 ## Features
 
@@ -21,7 +32,7 @@ ChatWaifu is a user-friendly chat interface that allows users to interact with a
 - Offline.
 
 ## Customization
-- Waifu Character: You can customize the appearance and behavior of the waifu character by modifying config.json, template.json and waifu files.
+- Waifu Character: You can customize the appearance and behavior of the waifu character by modifying config.json, template.json and waifu folder.
 - User Interface: Customize the user interface by modifying the HTML and CSS files to suit your preferences.
 
 ## Requirements:
@@ -30,7 +41,8 @@ ChatWaifu is a user-friendly chat interface that allows users to interact with a
 
 ## Installation:
 - Make sure you have installed C/C++ build tools and have CMake installed.
-- Set up a virtual environment (venv) or install Miniconda (optional but strongly recommended).
+- install msvc build tools if you are using windows [Build tools](https://aka.ms/vs/17/release/vs_BuildTools.exe)
+- Set up a virtual environment (venv) or Miniconda (optional but strongly recommended).
 - Clone the repository:
   ```bash
   git clone https://github.com/andri-jpg/chatwaifu
