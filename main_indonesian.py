@@ -37,9 +37,10 @@ def initialize_model():
         name=name,
         assistant_name=assistant_name
     )
-    emotion_analyzer = create_analyzer(task="emotion", lang="en", model_name='bertweet-base-emotion-analysis')
     ts = tts_infer(model_name=configs['vits_model'])
     tl = translator(indonesian=True)
+    emotion_analyzer = create_analyzer(task="emotion", lang="en", model_name='bertweet-base-emotion-analysis')
+
 
 generator, emotion_analyzer, ts, tl = initialize_model()
 words_to_clean = ["\n<human", "\n<bot"]
