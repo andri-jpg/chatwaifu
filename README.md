@@ -66,10 +66,6 @@ https://github.com/andri-jpg/chatwaifu/assets/91838310/54847989-db7b-4f9f-bbb7-6
 
 ## TODO
 - Documentation
-  
-## Your feedback is valuable and contributions through pull requests are welcomed to make this project even better.
-
-[![buymekofi](src/kofi.png)](https://ko-fi.com/andrilawrence#)
 
 ## Credits:
 - [pysentimentio](https://github.com/pysentimiento)
